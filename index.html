@@ -3,110 +3,164 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ICE FLAME | Perfumería</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ICE FLAME | Perfumería de lujo</title>
 <style>
-*{box-sizing:border-box}
-body{
- margin:0;
- background:#080808;
- color:white;
- font-family:Arial,sans-serif;
-}
-header{
- text-align:center;
- padding:35px 15px;
- border-bottom:1px solid #b99a50;
-}
-.logo{
- color:#d6b45c;
- font-size:38px;
- font-weight:bold;
- letter-spacing:7px;
-}
-header p{color:#ccc;letter-spacing:3px}
-.hero{
- text-align:center;
- padding:75px 20px;
- background:linear-gradient(135deg,#17130b,#050505);
-}
-.hero h1{font-size:36px;color:#d6b45c}
-.hero p{color:#ddd;line-height:1.7}
-h2{text-align:center;color:#d6b45c}
-.products{padding:30px 20px}
-.product{
- border:1px solid #9b7b37;
- border-radius:12px;
- padding:25px;
- text-align:center;
- margin:18px auto;
- max-width:400px;
- background:#111;
-}
-.product h3{color:#d6b45c}
-button{
- background:#c5a34d;
- color:#080808;
- border:0;
- padding:13px 22px;
- border-radius:6px;
- font-weight:bold;
-}
-.whatsapp{
- display:block;
- width:max-content;
- margin:30px auto;
- background:#c5a34d;
- color:#080808;
- text-decoration:none;
- padding:16px 25px;
- border-radius:8px;
- font-weight:bold;
-}
-footer{
- text-align:center;
- padding:25px;
- color:#aaa;
- border-top:1px solid #9b7b37;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#090909;color:#fff;font-family:Arial,sans-serif}
+header{text-align:center;padding:32px 12px;background:linear-gradient(120deg,#080808,#33260d,#080808);border-bottom:1px solid #c5a34e}
+.logo{font-size:39px;font-weight:900;letter-spacing:5px;color:#dfbd65}
+header p{color:#d5c69c;letter-spacing:3px;margin-top:9px;font-size:12px}
+nav{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;padding:17px;background:#111;border-bottom:1px solid #46371c}
+nav a{color:#d8b65c;text-decoration:none;font-size:13px}
+.hero{text-align:center;padding:65px 18px;background:radial-gradient(ellipse,#35280f,#090909 72%)}
+.hero h1{font-size:32px;color:#e4c36d;margin-bottom:16px}
+.hero p{line-height:1.7;color:#ddd}
+.gold{display:inline-block;background:#c5a34e;color:#080808;padding:13px 24px;margin-top:22px;text-decoration:none;font-weight:bold;border-radius:4px}
+.section{max-width:1100px;margin:auto;padding:38px 16px}
+h2{text-align:center;color:#d8b65c;margin-bottom:12px;font-size:26px}
+.sub{text-align:center;color:#aaa;margin-bottom:24px}
+.categories{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
+.categories button{padding:11px 17px;background:#171717;color:#d8b65c;border:1px solid #94783b;border-radius:22px;cursor:pointer}
+.categories button.active,.categories button:hover{background:#c5a34e;color:#090909}
+.search{display:block;width:100%;max-width:470px;margin:0 auto 25px;padding:14px;background:#171717;color:white;border:1px solid #a78a45;border-radius:5px;font-size:15px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:17px}
+.product{background:linear-gradient(145deg,#202020,#101010);border:1px solid #59471f;border-radius:8px;text-align:center;overflow:hidden;padding-bottom:19px}
+.photo{height:155px;background:radial-gradient(circle,#59451c,#15120b 70%);display:flex;align-items:center;justify-content:center;color:#e4c36d;font-size:45px}
+.product h3{color:#f0d58c;margin:15px 8px 9px;font-size:17px}
+.tag{display:inline-block;color:#c9b477;font-size:11px;border:1px solid #57451e;padding:4px 9px;border-radius:12px;margin-bottom:10px}
+.price{font-size:23px;color:#d8b65c;font-weight:bold}
+.product button{margin-top:13px;padding:11px 16px;background:#c5a34e;border:0;border-radius:4px;font-weight:bold;cursor:pointer}
+.empty{grid-column:1/-1;text-align:center;padding:35px;color:#bbb}
+.about{text-align:center;background:#121212;padding:38px 20px;line-height:1.9;border-top:1px solid #57451e;border-bottom:1px solid #57451e}
+.about h2,.contact h2{color:#d8b65c;margin-bottom:15px}
+.contact{text-align:center;padding:38px 15px;line-height:1.8}
+footer{text-align:center;padding:22px;color:#b29b60;background:#050505;font-size:13px}
+.whatsapp{position:fixed;right:16px;bottom:18px;background:#20c768;color:white;text-decoration:none;padding:14px 17px;border-radius:30px;font-weight:bold;box-shadow:0 3px 15px #000}
 </style>
 </head>
 <body>
+
 <header>
 <div class="logo">ICE FLAME</div>
 <p>EL ARTE DE DEJAR HUELLA</p>
 </header>
 
-<section class="hero">
-<h1>FRAGANCIAS QUE ENAMORAN</h1>
-<p>Descubre un mundo de aromas exclusivos.<br>
-Elegancia, personalidad y distinción en cada gota.</p>
-<a class="whatsapp" href="https://wa.me/5355773567">CONTACTAR POR WHATSAPP</a>
+<nav>
+<a href="#inicio">INICIO</a>
+<a href="#catalogo">CATÁLOGO</a>
+<a href="#nosotros">NOSOTROS</a>
+<a href="#contacto">CONTACTO</a>
+</nav>
+
+<section class="hero" id="inicio">
+<h1>Tu aroma, tu personalidad</h1>
+<p>Fragancias que hablan por ti.<br>
+Elegancia, calidad y distinción en cada esencia.</p>
+<a class="gold" href="#catalogo">DESCUBRIR FRAGANCIAS</a>
 </section>
 
-<section class="products">
-<h2>NUESTRA PERFUMERÍA</h2>
-<div class="product">
-<h3>Fragancias para Él</h3>
-<p>Elegancia y carácter en cada aroma.</p>
+<section class="section" id="catalogo">
+<h2>NUESTRO CATÁLOGO</h2>
+<p class="sub">Encuentra el aroma que te representa.</p>
+
+<div class="categories">
+<button class="active" onclick="filter('Todos',this)">TODOS</button>
+<button onclick="filter('Hombre',this)">HOMBRE</button>
+<button onclick="filter('Mujer',this)">MUJER</button>
+<button onclick="filter('Árabes',this)">ÁRABES</button>
+<button onclick="filter('Unisex',this)">UNISEX</button>
 </div>
-<div class="product">
-<h3>Fragancias para Ella</h3>
-<p>Esencia, belleza y sofisticación.</p>
-</div>
-<div class="product">
-<h3>Fragancias Exclusivas</h3>
-<p>Descubre aromas que dejan huella.</p>
-</div>
+
+<input class="search" id="search" placeholder="Buscar perfume..." oninput="render()">
+<div class="products" id="products"></div>
 </section>
 
-<a class="whatsapp" href="https://wa.me/5355773567">
-HAZ TU PEDIDO AQUÍ
-</a>
+<section class="about" id="nosotros">
+<h2>BIENVENIDO A ICE FLAME</h2>
+<p>No vendemos simplemente perfumes.<br>
+Ofrecemos personalidad, elegancia y distinción.<br>
+Un buen aroma deja recuerdos inolvidables.</p>
+</section>
+
+<section class="contact" id="contacto">
+<h2>¿BUSCAS TU FRAGANCIA IDEAL?</h2>
+<p>Estamos a un mensaje de distancia.</p>
+<a class="gold" href="https://wa.me/5355773567">CONTACTAR POR WHATSAPP</a>
+</section>
 
 <footer>
-ICE FLAME © 2026<br>
-Calidad, elegancia y buenos precios.
+© 2026 ICE FLAME | PERFUMERÍA<br>
+El aroma que deja huella.
 </footer>
+
+<a class="whatsapp" href="https://wa.me/5355773567">WHATSAPP</a>
+
+<script>
+const perfumes=[
+{name:"Hawas",price:50,cat:"Árabes"},
+{name:"Pacific Aura",price:45,cat:"Árabes"},
+{name:"Nitro Elixir",price:55,cat:"Árabes"},
+{name:"Kobra",price:65,cat:"Árabes"},
+{name:"9PM",price:65,cat:"Árabes"},
+{name:"Liquid Brun",price:65,cat:"Árabes"},
+{name:"Wraith Spectre",price:70,cat:"Árabes"},
+{name:"Momento Riffs",price:70,cat:"Árabes"},
+
+{name:"Tom Ford Ombré Leather",price:null,cat:"Hombre"},
+{name:"Dior Homme Intense",price:null,cat:"Hombre"},
+{name:"Bleu de Chanel EDP",price:null,cat:"Hombre"},
+{name:"SpiceBomb Extreme",price:null,cat:"Hombre"},
+{name:"Versace Eros Flame",price:null,cat:"Hombre"},
+{name:"Invictus Elixir",price:null,cat:"Hombre"},
+
+{name:"YSL Libre Intense",price:null,cat:"Mujer"},
+{name:"Black Opium YSL",price:null,cat:"Mujer"},
+{name:"Mon Paris YSL",price:null,cat:"Mujer"},
+
+{name:"Louis Vuitton Imagination",price:null,cat:"Unisex"}
+];
+
+let category="Todos";
+
+function filter(cat,btn){
+category=cat;
+document.querySelectorAll(".categories button").forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+render();
+}
+
+function render(){
+const search=document.getElementById("search").value.toLowerCase();
+const list=perfumes.filter(p=>
+(category==="Todos"||p.cat===category)&&
+p.name.toLowerCase().includes(search)
+);
+const container=document.getElementById("products");
+
+if(!list.length){
+container.innerHTML='<p class="empty">Próximamente tendremos nuevas fragancias.</p>';
+return;
+}
+
+container.innerHTML=list.map(p=>`
+<article class="product">
+<div class="photo">✦</div>
+<h3>${p.name}</h3>
+<span class="tag">${p.cat}</span>
+<div class="price">${p.price===null?"Consultar precio":"$"+p.price}</div>
+<button onclick="order('${p.name}')">CONSULTAR / COMPRAR</button>
+</article>
+`).join("");
+}
+
+function order(name){
+const msg="Hola ICE FLAME, quisiera información sobre "+name+". ¿Está disponible?";
+window.open("https://wa.me/5355773567?text="+encodeURIComponent(msg),"_blank");
+}
+
+render();
+</script>
 </body>
 </html>
+
