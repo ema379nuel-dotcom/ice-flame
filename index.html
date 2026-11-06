@@ -97,29 +97,7 @@ El aroma que deja huella.
 <a class="whatsapp" href="https://wa.me/5355773567">WHATSAPP</a>
 
 <script>
-const perfumes=[
-{name:"Hawas",price:50,cat:"Árabes"},
-{name:"Pacific Aura",price:45,cat:"Árabes"},
-{name:"Nitro Elixir",price:55,cat:"Árabes"},
-{name:"Kobra",price:65,cat:"Árabes"},
-{name:"9PM",price:65,cat:"Árabes"},
-{name:"Liquid Brun",price:65,cat:"Árabes"},
-{name:"Wraith Spectre",price:70,cat:"Árabes"},
-{name:"Momento Riffs",price:70,cat:"Árabes"},
 
-{name:"Tom Ford Ombré Leather",price:null,cat:"Hombre"},
-{name:"Dior Homme Intense",price:null,cat:"Hombre"},
-{name:"Bleu de Chanel EDP",price:null,cat:"Hombre"},
-{name:"SpiceBomb Extreme",price:null,cat:"Hombre"},
-{name:"Versace Eros Flame",price:null,cat:"Hombre"},
-{name:"Invictus Elixir",price:null,cat:"Hombre"},
-
-{name:"YSL Libre Intense",price:null,cat:"Mujer"},
-{name:"Black Opium YSL",price:null,cat:"Mujer"},
-{name:"Mon Paris YSL",price:null,cat:"Mujer"},
-
-{name:"Louis Vuitton Imagination",price:null,cat:"Unisex"}
-];
 
 let category="Todos";
 
@@ -130,6 +108,30 @@ btn.classList.add("active");
 render();
 }
 
+const perfumes=[
+{name:"Hawas",price:50,cat:"Árabes",image:""},
+{name:"Pacific Aura",price:45,cat:"Árabes",image:""},
+{name:"Nitro Elixir",price:55,cat:"Árabes",image:""},
+{name:"Kobra",price:65,cat:"Árabes",image:""},
+{name:"9PM",price:65,cat:"Árabes",image:""},
+{name:"Liquid Brun",price:65,cat:"Árabes",image:""},
+{name:"Wraith Spectre",price:70,cat:"Árabes",image:""},
+{name:"Momento Riffs",price:70,cat:"Árabes",image:""},
+
+{name:"Tom Ford Ombré Leather",price:null,cat:"Hombre",image:""},
+{name:"Dior Homme Intense",price:null,cat:"Hombre",image:""},
+{name:"Bleu de Chanel EDP",price:null,cat:"Hombre",image:""},
+{name:"SpiceBomb Extreme",price:null,cat:"Hombre",image:""},
+{name:"Versace Eros Flame",price:null,cat:"Hombre",image:""},
+{name:"Invictus Elixir",price:null,cat:"Hombre",image:""},
+
+{name:"YSL Libre Intense",price:null,cat:"Mujer",image:""},
+{name:"Black Opium YSL",price:null,cat:"Mujer",image:""},
+{name:"Mon Paris YSL",price:null,cat:"Mujer",image:""},
+
+{name:"Louis Vuitton Imagination",price:null,cat:"Unisex",image:""}
+];
+ 
 function render(){
 const search=document.getElementById("search").value.toLowerCase();
 const list=perfumes.filter(p=>
