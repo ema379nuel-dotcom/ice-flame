@@ -1,169 +1,361 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ICE FLAME | Perfumería de lujo</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#090909;color:#fff;font-family:Arial,sans-serif}
-header{text-align:center;padding:32px 12px;background:linear-gradient(120deg,#080808,#33260d,#080808);border-bottom:1px solid #c5a34e}
-.logo{font-size:39px;font-weight:900;letter-spacing:5px;color:#dfbd65}
-header p{color:#d5c69c;letter-spacing:3px;margin-top:9px;font-size:12px}
-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;padding:17px;background:#111;border-bottom:1px solid #46371c}
-nav a{color:#d8b65c;text-decoration:none;font-size:13px}
-.hero{text-align:center;padding:65px 18px;background:radial-gradient(ellipse,#35280f,#090909 72%)}
-.hero h1{font-size:32px;color:#e4c36d;margin-bottom:16px}
-.hero p{line-height:1.7;color:#ddd}
-.gold{display:inline-block;background:#c5a34e;color:#080808;padding:13px 24px;margin-top:22px;text-decoration:none;font-weight:bold;border-radius:4px}
-.section{max-width:1100px;margin:auto;padding:38px 16px}
-h2{text-align:center;color:#d8b65c;margin-bottom:12px;font-size:26px}
-.sub{text-align:center;color:#aaa;margin-bottom:24px}
-.categories{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
-.categories button{padding:11px 17px;background:#171717;color:#d8b65c;border:1px solid #94783b;border-radius:22px;cursor:pointer}
-.categories button.active,.categories button:hover{background:#c5a34e;color:#090909}
-.search{display:block;width:100%;max-width:470px;margin:0 auto 25px;padding:14px;background:#171717;color:white;border:1px solid #a78a45;border-radius:5px;font-size:15px}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:17px}
-.product{background:linear-gradient(145deg,#202020,#101010);border:1px solid #59471f;border-radius:8px;text-align:center;overflow:hidden;padding-bottom:19px}
-.photo{height:155px;background:radial-gradient(circle,#59451c,#15120b 70%);display:flex;align-items:center;justify-content:center;color:#e4c36d;font-size:45px}
-.product h3{color:#f0d58c;margin:15px 8px 9px;font-size:17px}
-.tag{display:inline-block;color:#c9b477;font-size:11px;border:1px solid #57451e;padding:4px 9px;border-radius:12px;margin-bottom:10px}
-.price{font-size:23px;color:#d8b65c;font-weight:bold}
-.product button{margin-top:13px;padding:11px 16px;background:#c5a34e;border:0;border-radius:4px;font-weight:bold;cursor:pointer}
-.empty{grid-column:1/-1;text-align:center;padding:35px;color:#bbb}
-.about{text-align:center;background:#121212;padding:38px 20px;line-height:1.9;border-top:1px solid #57451e;border-bottom:1px solid #57451e}
-.about h2,.contact h2{color:#d8b65c;margin-bottom:15px}
-.contact{text-align:center;padding:38px 15px;line-height:1.8}
-footer{text-align:center;padding:22px;color:#b29b60;background:#050505;font-size:13px}
-.whatsapp{position:fixed;right:16px;bottom:18px;background:#20c768;color:white;text-decoration:none;padding:14px 17px;border-radius:30px;font-weight:bold;box-shadow:0 3px 15px #000}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ice Flame Perfumerie</title>
+  <style>
+    :root {
+      --bg-color: #0d0d0d;
+      --card-bg: #161616;
+      --accent-color: #d4af37;
+      --text-color: #ffffff;
+      --text-muted: #aaaaaa;
+      --border-color: #2a2a2a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding-bottom: 80px;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+      background: linear-gradient(180deg, #1a1a1a 0%, var(--bg-color) 100%);
+    }
+
+    h1 {
+      color: var(--accent-color);
+      font-size: 2rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .cat-btn {
+      background: transparent;
+      border: 1px solid var(--accent-color);
+      color: var(--accent-color);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .cat-btn.active, .cat-btn:hover {
+      background: var(--accent-color);
+      color: #000;
+      font-weight: bold;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background: var(--card-bg);
+      color: #fff;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      outline: none;
+    }
+
+    .search-box:focus {
+      border-color: var(--accent-color);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 15px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 15px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    .card-cat {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      border: 1px solid var(--border-color);
+      padding: 2px 8px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .card-price {
+      font-size: 1.3rem;
+      color: var(--accent-color);
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .btn-buy {
+      display: inline-block;
+      width: 90%;
+      padding: 10px;
+      background: var(--accent-color);
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      font-size: 0.9rem;
+    }
+
+    .empty {
+      text-align: center;
+      color: var(--text-muted);
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-<div class="logo">ICE FLAME</div>
-<p>EL ARTE DE DEJAR HUELLA</p>
-</header>
+  <header>
+    <h1>Ice Flame</h1>
+    <p class="subtitle">NUESTRO CATÁLOGO</p>
+    <p class="subtitle" style="font-size: 0.8rem; margin-top: 3px;">Encuentra el aroma que te representa.</p>
+  </header>
 
-<nav>
-<a href="#inicio">INICIO</a>
-<a href="#catalogo">CATÁLOGO</a>
-<a href="#nosotros">NOSOTROS</a>
-<a href="#contacto">CONTACTO</a>
-</nav>
+  <div class="container">
+    <div class="categories">
+      <button class="cat-btn active" onclick="filterCat('Todos', this)">TODOS</button>
+      <button class="cat-btn" onclick="filterCat('Hombre', this)">HOMBRE</button>
+      <button class="cat-btn" onclick="filterCat('Mujer', this)">MUJER</button>
+      <button class="cat-btn" onclick="filterCat('Árabes', this)">ÁRABES</button>
+      <button class="cat-btn" onclick="filterCat('Unisex', this)">UNISEX</button>
+    </div>
 
-<section class="hero" id="inicio">
-<h1>Tu aroma, tu personalidad</h1>
-<p>Fragancias que hablan por ti.<br>
-Elegancia, calidad y distinción en cada esencia.</p>
-<a class="gold" href="#catalogo">DESCUBRIR FRAGANCIAS</a>
-</section>
+    <input type="text" id="searchInput" class="search-box" placeholder="Buscar perfume..." oninput="render()">
 
-<section class="section" id="catalogo">
-<h2>NUESTRO CATÁLOGO</h2>
-<p class="sub">Encuentra el aroma que te representa.</p>
+    <div id="productGrid" class="grid"></div>
+  </div>
 
-<div class="categories">
-<button class="active" onclick="filter('Todos',this)">TODOS</button>
-<button onclick="filter('Hombre',this)">HOMBRE</button>
-<button onclick="filter('Mujer',this)">MUJER</button>
-<button onclick="filter('Árabes',this)">ÁRABES</button>
-<button onclick="filter('Unisex',this)">UNISEX</button>
-</div>
+  <a href="https://wa.me/5355773567" class="whatsapp-float" target="_blank">WHATSAPP</a>
 
-<input class="search" id="search" placeholder="Buscar perfume..." oninput="render()">
-<div class="products" id="products"></div>
-</section>
+  <script>
+    const perfumes = [
+      {
+        name: "Hawas",
+        price: 50,
+        cat: "Árabes",
+        image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Pacific Aura",
+        price: 45,
+        cat: "Árabes",
+        image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Nitro Elixir",
+        price: 55,
+        cat: "Árabes",
+        image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Kobra",
+        price: 65,
+        cat: "Árabes",
+        image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "9PM",
+        price: 65,
+        cat: "Árabes",
+        image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Liquid Brun",
+        price: 65,
+        cat: "Árabes",
+        image: "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Wraith Spectre",
+        price: 70,
+        cat: "Árabes",
+        image: "https://images.unsplash.com/photo-1528729482771-6f07b5d72fcf?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Momento Riffs",
+        price: 70,
+        cat: "Árabes",
+        image: "https://images.unsplash.com/photo-1557170334-a9632e77c6e4?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Tom Ford Ombré Leather",
+        price: null,
+        cat: "Hombre",
+        image: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Dior Homme Intense",
+        price: null,
+        cat: "Hombre",
+        image: "https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Bleu de Chanel EDP",
+        price: null,
+        cat: "Hombre",
+        image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "SpiceBomb Extreme",
+        price: null,
+        cat: "Hombre",
+        image: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Versace Eros Flame",
+        price: null,
+        cat: "Hombre",
+        image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Invictus Elixir",
+        price: null,
+        cat: "Hombre",
+        image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "YSL Libre Intense",
+        price: null,
+        cat: "Mujer",
+        image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Black Opium YSL",
+        price: null,
+        cat: "Mujer",
+        image: "https://images.unsplash.com/photo-1557170334-a9632e77c6e4?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Mon Paris YSL",
+        price: null,
+        cat: "Mujer",
+        image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Louis Vuitton Imagination",
+        price: null,
+        cat: "Unisex",
+        image: "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=600&q=80"
+      }
+    ];
 
-<section class="about" id="nosotros">
-<h2>BIENVENIDO A ICE FLAME</h2>
-<p>No vendemos simplemente perfumes.<br>
-Ofrecemos personalidad, elegancia y distinción.<br>
-Un buen aroma deja recuerdos inolvidables.</p>
-</section>
+    let currentCategory = "Todos";
 
-<section class="contact" id="contacto">
-<h2>¿BUSCAS TU FRAGANCIA IDEAL?</h2>
-<p>Estamos a un mensaje de distancia.</p>
-<a class="gold" href="https://wa.me/5355773567">CONTACTAR POR WHATSAPP</a>
-</section>
+    function filterCat(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render();
+    }
 
-<footer>
-© 2026 ICE FLAME | PERFUMERÍA<br>
-El aroma que deja huella.
-</footer>
+    function render() {
+      const search = document.getElementById("searchInput").value.toLowerCase();
+      const container = document.getElementById("productGrid");
+      
+      const filtered = perfumes.filter(p => {
+        const matchesCat = currentCategory === "Todos" || p.cat === currentCategory;
+        const matchesSearch = p.name.toLowerCase().includes(search);
+        return matchesCat && matchesSearch;
+      });
 
-<a class="whatsapp" href="https://wa.me/5355773567">WHATSAPP</a>
+      if (filtered.length === 0) {
+        container.innerHTML = '<p class="empty">Próximamente más catálogo disponible.</p>';
+        return;
+      }
 
-<script>
+      container.innerHTML = filtered.map(p => `
+        <div class="card">
+          <img src="${p.image}" alt="${p.name}">
+          <div class="card-body">
+            <h3 class="card-title">${p.name}</h3>
+            <span class="card-cat">${p.cat}</span>
+            <div class="card-price">${p.price ? '$' + p.price : 'Consultar'}</div>
+            <a href="https://wa.me/5355773567?text=Hola,%20deseo%20consultar%20sobre%20el%20perfume%20${encodeURIComponent(p.name)}" class="btn-buy" target="_blank">CONSULTAR / COMPRAR</a>
+          </div>
+        </div>
+      `).join('');
+    }
 
-
-let category="Todos";
-
-function filter(cat,btn){
-category=cat;
-document.querySelectorAll(".categories button").forEach(b=>b.classList.remove("active"));
-btn.classList.add("active");
-render();
-}
-
-const perfumes=[
-{name:"Hawas",price:50,cat:"Árabes",image:"https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=600&q=80"},
-{name:"Pacific Aura",price:45,cat:"Árabes",image:"https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80"},
-{name:"Nitro Elixir",price:55,cat:"Árabes",image:"https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=600&q=80"},
-{name:"Kobra",price:65,cat:"Árabes",image:"https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=600&q=80"},
-{name:"9PM",price:65,cat:"Árabes",image:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80"},
-{name:"Liquid Brun",price:65,cat:"Árabes",image:"https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=600&q=80"},
-{name:"Wraith Spectre",price:70,cat:"Árabes",image:"https://images.unsplash.com/photo-1528729482771-6f07b5d72fcf?auto=format&fit=crop&w=600&q=80"},
-{name:"Momento Riffs",price:70,cat:"Árabes",image:"https://images.unsplash.com/photo-1557170334-a9632e77c6e4?auto=format&fit=crop&w=600&q=80"},
-
-{name:"Tom Ford Ombré Leather",price:null,cat:"Hombre",image:"https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=600&q=80"},
-{name:"Dior Homme Intense",price:null,cat:"Hombre",image:"https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=600&q=80"},
-{name:"Bleu de Chanel EDP",price:null,cat:"Hombre",image:"https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=600&q=80"},
-{name:"SpiceBomb Extreme",price:null,cat:"Hombre",image:"https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=80"},
-{name:"Versace Eros Flame",price:null,cat:"Hombre",image:"https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80"},
-{name:"Invictus Elixir",price:null,cat:"Hombre",image:"https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=600&q=80"},
-
-{name:"YSL Libre Intense",price:null,cat:"Mujer",image:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80"},
-{name:"Black Opium YSL",price:null,cat:"Mujer",image:"https://images.unsplash.com/photo-1557170334-a9632e77c6e4?auto=format&fit=crop&w=600&q=80"},
-{name:"Mon Paris YSL",price:null,cat:"Mujer",image:"https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=600&q=80"},
-
-{name:"Louis Vuitton Imagination",price:null,cat:"Unisex",image:"https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=600&q=80"}
-];
- 
- 
-function render(){
-const search=document.getElementById("search").value.toLowerCase();
-const list=perfumes.filter(p=>
-(category==="Todos"||p.cat===category)&&
-p.name.toLowerCase().includes(search)
-);
-const container=document.getElementById("products");
-
-if(!list.length){
-container.innerHTML='<p class="empty">Próximamente tendremos nuevas fragancias.</p>';
-return;
-}
-
-container.innerHTML=list.map(p=>`
-<article class="product">
-<div class="photo">✦</div>
-<h3>${p.name}</h3>
-<span class="tag">${p.cat}</span>
-<div class="price">${p.price===null?"Consultar precio":"$"+p.price}</div>
-<button onclick="order('${p.name}')">CONSULTAR / COMPRAR</button>
-</article>
-`).join("");
-}
-
-function order(name){
-const msg="Hola ICE FLAME, quisiera información sobre "+name+". ¿Está disponible?";
-window.open("https://wa.me/5355773567?text="+encodeURIComponent(msg),"_blank");
-}
-
-render();
-</script>
+    render();
+  </script>
 </body>
 </html>
 
+      
